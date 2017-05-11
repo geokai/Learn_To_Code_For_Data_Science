@@ -11775,22 +11775,22 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-data">The data<a class="anchor-link" href="#The-data">&#182;</a></h2><p>The data consists of total population and total number of deaths due to TB (excluding HIV) in 2013 in each of the BRICS (Brazil, Russia, India, China, South Africa) and Portuguese-speaking countries.</p>
 <p>The data was taken in July 2015 from <a href="http://apps.who.int/gho/data/node.main.POP107?lang=en">http://apps.who.int/gho/data/node.main.POP107?lang=en</a> (population) and <a href="http://apps.who.int/gho/data/node.main.593?lang=en">http://apps.who.int/gho/data/node.main.593?lang=en</a> (deaths). The uncertainty bounds of the number of deaths were ignored.</p>
-<p>The data was collected into an Excel file which should be in the same folder as this notebook.</p>
+<p>The data was collected into an Excel file. This data file must be in a location path accessable from this notebook's file location (see below).</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="ne">FutureWarning</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">pandas</span> <span class="k">import</span> <span class="o">*</span>
-<span class="c1">#pandas.set_option(&#39;display.max_rows&#39;, 10)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../Datasets/Datasets_From_Course/WHO POP TB all.xls&#39;</span><span class="p">)</span>
+<span class="n">pandas</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>   <span class="c1"># alter this value (30) in order to display more or less of the table</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;../Datasets/Datasets_From_Course/WHO POP TB all.xls&#39;</span><span class="p">)</span> <span class="c1"># relative path to the datafile location</span>
 <span class="n">data</span>
 </pre></div>
 
@@ -11802,7 +11802,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[66]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -11907,190 +11907,10 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
       <td>2.00</td>
     </tr>
     <tr>
-      <th>15</th>
-      <td>Belarus</td>
-      <td>9357</td>
-      <td>850.00</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>Belgium</td>
-      <td>11104</td>
-      <td>18.00</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>Belize</td>
-      <td>332</td>
-      <td>20.00</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>Benin</td>
-      <td>10323</td>
-      <td>1300.00</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>Bhutan</td>
-      <td>754</td>
-      <td>88.00</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>Bolivia (Plurinational State of)</td>
-      <td>10671</td>
-      <td>430.00</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>Bosnia and Herzegovina</td>
-      <td>3829</td>
-      <td>190.00</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>Botswana</td>
-      <td>2021</td>
-      <td>440.00</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>Brazil</td>
-      <td>200362</td>
-      <td>4400.00</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>Brunei Darussalam</td>
-      <td>418</td>
-      <td>13.00</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>Bulgaria</td>
-      <td>7223</td>
-      <td>150.00</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>Burkina Faso</td>
-      <td>16935</td>
-      <td>1500.00</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>Burundi</td>
-      <td>10163</td>
-      <td>2300.00</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>CÃ´te d'Ivoire</td>
-      <td>20316</td>
-      <td>4000.00</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Cabo Verde</td>
-      <td>499</td>
-      <td>150.00</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>Suriname</td>
-      <td>539</td>
-      <td>12.00</td>
-    </tr>
-    <tr>
-      <th>165</th>
-      <td>Swaziland</td>
-      <td>1250</td>
-      <td>1100.00</td>
-    </tr>
-    <tr>
-      <th>166</th>
-      <td>Sweden</td>
-      <td>9571</td>
-      <td>13.00</td>
-    </tr>
-    <tr>
-      <th>167</th>
-      <td>Switzerland</td>
-      <td>8078</td>
-      <td>17.00</td>
-    </tr>
-    <tr>
-      <th>168</th>
-      <td>Syrian Arab Republic</td>
-      <td>21898</td>
-      <td>450.00</td>
-    </tr>
-    <tr>
-      <th>169</th>
-      <td>Tajikistan</td>
-      <td>8208</td>
-      <td>570.00</td>
-    </tr>
-    <tr>
-      <th>170</th>
-      <td>Thailand</td>
-      <td>67010</td>
-      <td>8100.00</td>
-    </tr>
-    <tr>
-      <th>171</th>
-      <td>The former Yugoslav republic of Macedonia</td>
-      <td>2107</td>
-      <td>33.00</td>
-    </tr>
-    <tr>
-      <th>172</th>
-      <td>Timor-Leste</td>
-      <td>1133</td>
-      <td>990.00</td>
-    </tr>
-    <tr>
-      <th>173</th>
-      <td>Togo</td>
-      <td>6817</td>
-      <td>810.00</td>
-    </tr>
-    <tr>
-      <th>174</th>
-      <td>Tonga</td>
-      <td>105</td>
-      <td>2.50</td>
-    </tr>
-    <tr>
-      <th>175</th>
-      <td>Trinidad and Tobago</td>
-      <td>1341</td>
-      <td>29.00</td>
-    </tr>
-    <tr>
-      <th>176</th>
-      <td>Tunisia</td>
-      <td>10997</td>
-      <td>230.00</td>
-    </tr>
-    <tr>
-      <th>177</th>
-      <td>Turkey</td>
-      <td>74933</td>
-      <td>310.00</td>
-    </tr>
-    <tr>
-      <th>178</th>
-      <td>Turkmenistan</td>
-      <td>5240</td>
-      <td>1300.00</td>
     </tr>
     <tr>
       <th>179</th>
@@ -12206,7 +12026,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;TB deaths&#39;</span><span class="p">]</span>
@@ -12229,10 +12049,10 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># the &#39;tbColumn&#39; variable is evaluated with several &#39;methods&#39; - sum(), max(), etc</span>
 </pre></div>
 
 </div>
@@ -12243,7 +12063,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[68]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12268,7 +12088,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -12282,7 +12102,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[69]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12297,7 +12117,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
@@ -12311,7 +12131,7 @@ TB doesn't make headlines like Ebola, SARS (severe acute respiratory syndrome) a
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[70]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12337,7 +12157,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
@@ -12351,7 +12171,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[71]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12366,7 +12186,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tbColumn</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
@@ -12380,7 +12200,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[72]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12415,10 +12235,10 @@ The average can be computed as the mean or the median. Given the wide range of d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;TB deaths&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;TB deaths&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>    <span class="c1"># the &#39;keyword&#39; property results in a descending sort - highest at the top</span>
 </pre></div>
 
 </div>
@@ -12429,7 +12249,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[73]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12534,190 +12354,10 @@ The average can be computed as the mean or the median. Given the wide range of d
       <td>13000.00</td>
     </tr>
     <tr>
-      <th>100</th>
-      <td>Madagascar</td>
-      <td>22925</td>
-      <td>12000.00</td>
-    </tr>
-    <tr>
-      <th>30</th>
-      <td>Cambodia</td>
-      <td>15135</td>
-      <td>10000.00</td>
-    </tr>
-    <tr>
-      <th>163</th>
-      <td>Sudan</td>
-      <td>37964</td>
-      <td>9700.00</td>
-    </tr>
-    <tr>
-      <th>88</th>
-      <td>Kenya</td>
-      <td>44354</td>
-      <td>9100.00</td>
-    </tr>
-    <tr>
-      <th>170</th>
-      <td>Thailand</td>
-      <td>67010</td>
-      <td>8100.00</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>Cameroon</td>
-      <td>22254</td>
-      <td>7800.00</td>
-    </tr>
-    <tr>
-      <th>158</th>
-      <td>Somalia</td>
-      <td>10496</td>
-      <td>7700.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Angola</td>
-      <td>21472</td>
-      <td>6900.00</td>
-    </tr>
-    <tr>
-      <th>46</th>
-      <td>Democratic People's Republic of Korea</td>
-      <td>24895</td>
-      <td>6700.00</td>
-    </tr>
-    <tr>
-      <th>181</th>
-      <td>Ukraine</td>
-      <td>45239</td>
-      <td>6600.00</td>
-    </tr>
-    <tr>
-      <th>184</th>
-      <td>United Republic of Tanzania</td>
-      <td>49253</td>
-      <td>6000.00</td>
-    </tr>
-    <tr>
-      <th>193</th>
-      <td>Zimbabwe</td>
-      <td>14150</td>
-      <td>5700.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Algeria</td>
-      <td>39208</td>
-      <td>5100.00</td>
-    </tr>
-    <tr>
-      <th>119</th>
-      <td>Nepal</td>
-      <td>27797</td>
-      <td>4600.00</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>South Sudan</td>
-      <td>11296</td>
-      <td>4500.00</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>164</th>
-      <td>Suriname</td>
-      <td>539</td>
-      <td>12.00</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>Bahrain</td>
-      <td>1332</td>
-      <td>9.60</td>
-    </tr>
-    <tr>
-      <th>103</th>
-      <td>Maldives</td>
-      <td>345</td>
-      <td>7.60</td>
-    </tr>
-    <tr>
-      <th>121</th>
-      <td>New Zealand</td>
-      <td>4506</td>
-      <td>6.30</td>
-    </tr>
-    <tr>
-      <th>146</th>
-      <td>Samoa</td>
-      <td>190</td>
-      <td>6.10</td>
-    </tr>
-    <tr>
-      <th>126</th>
-      <td>Norway</td>
-      <td>5043</td>
-      <td>4.40</td>
-    </tr>
-    <tr>
-      <th>145</th>
-      <td>Saint Vincent and the Grenadines</td>
-      <td>109</td>
-      <td>3.10</td>
-    </tr>
-    <tr>
-      <th>179</th>
-      <td>Tuvalu</td>
-      <td>10</td>
-      <td>2.80</td>
-    </tr>
-    <tr>
-      <th>137</th>
-      <td>Qatar</td>
-      <td>2169</td>
-      <td>2.70</td>
-    </tr>
-    <tr>
-      <th>50</th>
-      <td>Dominica</td>
-      <td>72</td>
-      <td>2.70</td>
-    </tr>
-    <tr>
-      <th>174</th>
-      <td>Tonga</td>
-      <td>105</td>
-      <td>2.50</td>
-    </tr>
-    <tr>
-      <th>44</th>
-      <td>Cyprus</td>
-      <td>1141</td>
-      <td>2.30</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>Luxembourg</td>
-      <td>530</td>
-      <td>2.20</td>
-    </tr>
-    <tr>
-      <th>144</th>
-      <td>Saint Lucia</td>
-      <td>182</td>
-      <td>2.20</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>Barbados</td>
-      <td>285</td>
-      <td>2.00</td>
     </tr>
     <tr>
       <th>11</th>
@@ -12843,12 +12483,12 @@ The average can be computed as the mean or the median. Given the wide range of d
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">populationColumn</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Population (1000s)&#39;</span><span class="p">]</span>
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;TB deaths (per 100,000)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tbColumn</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">populationColumn</span>
-<span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;TB deaths (per 100,000)&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;TB deaths (per 100,000)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tbColumn</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">/</span> <span class="n">populationColumn</span> <span class="c1"># a new column of data is created from the evaluation</span>
+<span class="n">data</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;TB deaths (per 100,000)&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># the table is sorted in descending order base on the new column</span>
 </pre></div>
 
 </div>
@@ -12859,7 +12499,7 @@ The average can be computed as the mean or the median. Given the wide range of d
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[74]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12980,221 +12620,11 @@ The average can be computed as the mean or the median. Given the wide range of d
       <td>48.905449</td>
     </tr>
     <tr>
-      <th>116</th>
-      <td>Myanmar</td>
-      <td>53259</td>
-      <td>26000.00</td>
-      <td>48.818040</td>
-    </tr>
-    <tr>
-      <th>33</th>
-      <td>Central African Republic</td>
-      <td>4616</td>
-      <td>2200.00</td>
-      <td>47.660312</td>
-    </tr>
-    <tr>
-      <th>159</th>
-      <td>South Africa</td>
-      <td>52776</td>
-      <td>25000.00</td>
-      <td>47.370017</td>
-    </tr>
-    <tr>
-      <th>95</th>
-      <td>Lesotho</td>
-      <td>2074</td>
-      <td>960.00</td>
-      <td>46.287367</td>
-    </tr>
-    <tr>
-      <th>39</th>
-      <td>Congo</td>
-      <td>4448</td>
-      <td>2000.00</td>
-      <td>44.964029</td>
-    </tr>
-    <tr>
-      <th>153</th>
-      <td>Sierra Leone</td>
-      <td>6092</td>
-      <td>2600.00</td>
-      <td>42.678923</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>Afghanistan</td>
-      <td>30552</td>
-      <td>13000.00</td>
-      <td>42.550406</td>
-    </tr>
-    <tr>
-      <th>193</th>
-      <td>Zimbabwe</td>
-      <td>14150</td>
-      <td>5700.00</td>
-      <td>40.282686</td>
-    </tr>
-    <tr>
-      <th>160</th>
-      <td>South Sudan</td>
-      <td>11296</td>
-      <td>4500.00</td>
-      <td>39.837110</td>
-    </tr>
-    <tr>
-      <th>106</th>
-      <td>Marshall Islands</td>
-      <td>53</td>
-      <td>21.00</td>
-      <td>39.622642</td>
-    </tr>
-    <tr>
-      <th>31</th>
-      <td>Cameroon</td>
-      <td>22254</td>
-      <td>7800.00</td>
-      <td>35.049879</td>
-    </tr>
-    <tr>
-      <th>131</th>
-      <td>Papua New Guinea</td>
-      <td>7321</td>
-      <td>2400.00</td>
-      <td>32.782407</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Angola</td>
-      <td>21472</td>
-      <td>6900.00</td>
-      <td>32.134873</td>
-    </tr>
-    <tr>
-      <th>58</th>
-      <td>Ethiopia</td>
-      <td>94101</td>
-      <td>30000.00</td>
-      <td>31.880639</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>Cabo Verde</td>
-      <td>499</td>
-      <td>150.00</td>
-      <td>30.060120</td>
-    </tr>
-    <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-    </tr>
-    <tr>
-      <th>83</th>
-      <td>Italy</td>
-      <td>60990</td>
-      <td>310.00</td>
-      <td>0.508280</td>
-    </tr>
-    <tr>
-      <th>86</th>
-      <td>Jordan</td>
-      <td>7274</td>
-      <td>35.00</td>
-      <td>0.481166</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Bahamas</td>
-      <td>377</td>
-      <td>1.80</td>
-      <td>0.477454</td>
-    </tr>
-    <tr>
-      <th>48</th>
-      <td>Denmark</td>
-      <td>5619</td>
-      <td>24.00</td>
-      <td>0.427122</td>
-    </tr>
-    <tr>
-      <th>99</th>
-      <td>Luxembourg</td>
-      <td>530</td>
-      <td>2.20</td>
-      <td>0.415094</td>
-    </tr>
-    <tr>
-      <th>177</th>
-      <td>Turkey</td>
-      <td>74933</td>
-      <td>310.00</td>
-      <td>0.413703</td>
-    </tr>
-    <tr>
-      <th>81</th>
-      <td>Ireland</td>
-      <td>4627</td>
-      <td>18.00</td>
-      <td>0.389021</td>
-    </tr>
-    <tr>
-      <th>65</th>
-      <td>Germany</td>
-      <td>82727</td>
-      <td>300.00</td>
-      <td>0.362639</td>
-    </tr>
-    <tr>
-      <th>105</th>
-      <td>Malta</td>
-      <td>429</td>
-      <td>1.50</td>
-      <td>0.349650</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Austria</td>
-      <td>8495</td>
-      <td>29.00</td>
-      <td>0.341377</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Andorra</td>
-      <td>79</td>
-      <td>0.26</td>
-      <td>0.329114</td>
-    </tr>
-    <tr>
-      <th>43</th>
-      <td>Cuba</td>
-      <td>11266</td>
-      <td>37.00</td>
-      <td>0.328422</td>
-    </tr>
-    <tr>
-      <th>60</th>
-      <td>Finland</td>
-      <td>5426</td>
-      <td>17.00</td>
-      <td>0.313306</td>
-    </tr>
-    <tr>
-      <th>76</th>
-      <td>Iceland</td>
-      <td>330</td>
-      <td>0.93</td>
-      <td>0.281818</td>
-    </tr>
-    <tr>
-      <th>45</th>
-      <td>Czech Republic</td>
-      <td>10702</td>
-      <td>28.00</td>
-      <td>0.261633</td>
     </tr>
     <tr>
       <th>167</th>
@@ -13318,8 +12748,8 @@ The average can be computed as the mean or the median. Given the wide range of d
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><p>The entire world population had a total of about 1.7 million deaths due to TB in 2013. The median shows that half of these coutries had less than 315 deaths. The much higher mean (over 5,500) indicates that some countries had a very high number. The least affected were San Marino, Niuo and Monaco, with less than 0.1 deaths, and the most affected were India and Nigeria with 240 thousand and 160 thousand deaths in a single year respectively. However, taking the population size into account, the least affected were San Marino, Monaco and Norway with less than 0.1 deaths per 100 thousand inhabitants, and the most affected were Djibouti and Nigeria with over 92 deaths per 100,000 inhabitants.</p>
-<p>One should not forget that most values are estimates. Nevertheless, they convey the message that TB is still a major cause of fatalities, and that there is a huge disparity between countries, with several ones being highly affected.</p>
+<h2 id="Conclusions">Conclusions<a class="anchor-link" href="#Conclusions">&#182;</a></h2><p>The entire world population had a total of about 1.07 million deaths due to TB in 2013. The median shows that half of these coutries had less than 315 deaths. The much higher mean (over 5,500) indicates that some countries had a very high number. The least affected were San Marino, Niuo and Monaco, with less than 0.1 deaths, and the most affected were India and Nigeria with 240 thousand and 160 thousand deaths in a single year respectively. However, taking the population size into account, the least affected were San Marino, Monaco and Norway with less than 0.1 deaths per 100 thousand inhabitants, and the most affected were Djibouti and Nigeria with over 92 deaths per 100,000 inhabitants.</p>
+<p>One should not forget that most values are estimates. Nevertheless, they convey the message that TB is still a major cause of fatalities, and that there is a huge disparity between countries, with several countries being highly affected.</p>
 
 </div>
 </div>
