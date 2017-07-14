@@ -12,4 +12,4 @@ Course_Notebooks/superceded/
 .ipynb_checkpoints/
 
 # Files:
-
+*.html
